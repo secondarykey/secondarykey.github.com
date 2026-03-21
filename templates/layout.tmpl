@@ -5,6 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ .Home.Name }}</title>
     <meta name="description" content="{{.Home.Detail}}">
+    <style>
+body {
+   color:white; 
+   background-color:#333333;
+}
+
+img {
+  object-fit:fill;
+  width:90%;
+  margin:auto;
+  padding:10px;
+  display:block;
+}
+
+a {
+   color:gray;
+}
+div.binderSVG svg {
+  background-color:#111111;
+}
+    </style>
   </head>
   <body>
      {{ template "Content" . }}
