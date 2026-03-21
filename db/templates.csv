@@ -1,1 +1,4 @@
 id,type,name,detail,seq,created_date,created_user,updated_date,updated_user
+layout,layout,Layout,,0,2026-03-21T16:23:07.6929762+09:00,user,0001-01-01T00:00:00Z,
+content,content,Content,,0,2026-03-21T16:23:07.7109938+09:00,user,0001-01-01T00:00:00Z,
+index,content,Index,,0,2026-03-21T16:23:07.7203812+09:00,user,0001-01-01T00:00:00Z,
