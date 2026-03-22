@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>A home-cooked move</title>
+    <meta name="description" content="secondarykey の開発日誌です。">
+    <style>
+    
+body {
+   color:white; 
+   background-color:#333333;
+}
+
+img {
+  object-fit:fill;
+  width:90%;
+  margin:auto;
+  padding:10px;
+  display:block;
+  border: 1px solid #555555;
+  border-radius: 5px;
+}
+
+a {
+   color:gray;
+}
+
+blockquote {
+  position: relative;
+  background-color:#555555;
+  margin:20px;
+  padding:5px;
+  padding-left:30px;
+  border-radius:10px;
+}
+
+blockquote::before {
+  content: "“";
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  font-size: 3em;
+  line-height: 1;
+  color: #999;
+}
+
+blockquote::after {
+  content: "”";
+  font-size: 3em;
+  line-height: 0;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: #999;
+}
+
+div.binderSVG svg {
+  background-color:#333333;
+}
+
+div.binderSVG {
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  padding:5px;
+}
+
+header {
+  position:sticky;
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+main {
+  position:relative;
+  top:0px;
+  display:flex;
+}
+
+hr {
+  border-color:#222222;
+}
+
+#left {
+  width:60px;
+}
+
+#content {
+  max-width:900px;
+  min-width:600px;
+  border:2px solid #404040;
+  border-radius:10px;
+  padding: 0px 20px;
+  background-color:#444444;
+}
+
+#right {
+  width:400px;
+}
+
+footer {
+   position:relative;
+}
+
+.article-title {
+  margin-bottom:0px;
+}
+
+.article-header {
+  font-size:13px;
+  display:flex;
+  justify-content:space-between;
+  color:#999999;
+}
+
+.article-body {
+  margin-top:30px;
+}
+
+h2 {
+  font-size:20px;
+  text-decoration:underline;
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="../">A home-cooked move</a>
+      <hr>
+    </header>
+    <main>
+      <section id="left"></section>
+      <section id="content">
+       <article>
+<h1 class="article-title">
+  <a href="../pages/019d0f46-be68-7da2-94d9-c193f40d087b.html">ことのはじまり</a>
+</h1>
+<div class="article-header">
+  <span>2026-03-22 06:22 </span>
+  <span>secondarykey</span>
+</div>
+<p class="article-body">
+<p>このブログを書こうと思ったのは恐らく３年近く前。パソコンを久しぶりに自作するに辺りどういう構成にしたかを書こうと思った。</p>
+<blockquote>
+<p>そういえばそういうの書く個人ブログないなぁ</p>
+</blockquote>
+<p>それがなぜ今に至ったかを書いていきたい。</p>
+<blockquote>
+<p>まぁGitHubに適当に書くか</p>
+</blockquote>
+<p>位から始まったんだけど、書こうと思うと案外書きづらい。
+ちょうどその頃マークダウンの簡易エディタが欲しくてそれを作ってやろうという簡単な気持ちから始まった。</p>
+<h2>膨らむエディタ</h2>
+<p>本当に簡単なマークダウンエディタを作る予定だった。</p>
+<blockquote>
+<p>編集の履歴が見れたらなぁ</p>
+</blockquote>
+<p>という考えの元、Gitで履歴を残そうと思って、文章をgo-git で保存しようと思い立つ。これがベースの考え方。</p>
+<p>このエディタは常にテキストを更新し、自分の作業が終わったら保存（Gitでいうコミット）。別に作業途中でアプリを終了しようがファイル自体は保存されているっていうのが特徴。</p>
+<p>ここで少し欲が出てくる。
+設計文書として保存できたらいいな。</p>
+<blockquote>
+<p>ならMermaid 書けるよね？</p>
+</blockquote>
+<p>単純に文書と図を残せるように作っていたんだけど、
+設計文書として作っていると、この設計は、、、とか概要から細かい話しみたいなことになってくるのでツリー構造が必要になってきた。</p>
+<p>そんなの想定して無かったので設計変更が必要になってくる。
+ツリー構造にするならドラッグしたいよなぁとか細かいことができればいいなぁとか画像を挿入してーとか、当初の目標である簡易CMSとしての機能が加わりどんどん肥大化していって頭が痛くなってきた。</p>
+<h2>ライバルの進化と衰退</h2>
+<p>VSCode で同じようなことはできるんだけど、まぁライバル視してあまりライバル視してなかった。単純にメモを書いておくには大きすぎるかな？って印象だったからだ。</p>
+<p>しかしちょうどその頃、Microsoftの肝いりで”メモ帳”が進化を始める。
+タブで開けるようになり、端末が再起動してもメモ自体は残っている。</p>
+<p>ようは一番やりたかった保存せずに文章は残っているという一番の特徴が被ってしまった。</p>
+<p>自分の気持ちも少し萎えたのとデータ自体の保存は完了していたので別にいいやって感じになって自分用のツールとして使っていた。</p>
+<p>そして、再燃するきっかけになったのはメモ帳の無駄な進化。マークダウンへの対応である。</p>
+<p>それをみた瞬間</p>
+<blockquote>
+<p>メモ帳は終わった</p>
+</blockquote>
+<p>と感じた。はじまっていたのかは不明だけど、少し開発意欲が湧いてくる。</p>
+<h2>AIの進化</h2>
+<p>恐らく全くバージョンアップをしなくなって１年は経過した頃。
+AIが進化し、コードを書いてくれるようになっていた。自分も使うようになっていった。</p>
+<p>ふとこのエディタのコードを読ませてみた。
+面倒だと思っていたことをどんどん実装してくAI。</p>
+<p>おかしなコードを書くこともあるが、ノウハウを蓄積する為にもどういうことが得意か？とかそんなことを調査しながら色々やってみたかった機能などを実装していく。</p>
+<p>それで一応外に見せれるようになったのがこの「Binder」</p>
+<img src="../assets/clipboard-1774079780771.png">
+
+<p>これはこのブログを書いている途中だが、ある程度書けるようになったし、このブログが見れているってことはCMSとしても機能しているということ。</p>
+<p>もちろん図も書ける。</p>
+<div class="binderSVG" id="019d0f46-be88-76ab-8673-f0dee8535ce5">
+<img src="../images/019d0f46-be88-76ab-8673-f0dee8535ce5.svg">
+</div>
+
+<p>というよりこの記事自体がエディタのPush機能のテストである。
+面白いことに簡易的なGitクライアントみたいな機能がちょこちょこある。</p>
+<img src="../assets/clipboard-1774141457869.png">
+
+<p>まだ色々な機能を追加していくとは思うが、まぁ一旦はそれなりのエディタになった。何より編集自体は外部エディタを起動して編集もできるのでVimも使おうと思えば使える。</p>
+<p>Wikiなどで使い方が出来上がったら何か宣伝もするかもだけど、まぁ基本的には自分の便利なメモ帳である。</p>
+
+</p>
+</article>
+
+      </section>
+      <section id="right">
+      </section>
+    </main>
+    <footer><hr> &copy; secondarykey</footer>
+  </body>
+</html>
