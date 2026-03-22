@@ -6,6 +6,7 @@
     <title>{{ .Home.Name }}</title>
     <meta name="description" content="{{.Home.Detail}}">
     <style>
+    
 body {
    color:white; 
    background-color:#333333;
@@ -25,6 +26,35 @@ a {
    color:gray;
 }
 
+blockquote {
+  position: relative;
+  background-color:#555555;
+  margin:20px;
+  padding:5px;
+  padding-left:30px;
+  border-radius:10px;
+}
+
+blockquote::before {
+  content: "“";
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  font-size: 3em;
+  line-height: 1;
+  color: #999;
+}
+
+blockquote::after {
+  content: "”";
+  font-size: 3em;
+  line-height: 0;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: #999;
+}
+
 div.binderSVG svg {
   background-color:#333333;
 }
@@ -35,9 +65,78 @@ div.binderSVG {
   padding:5px;
 }
 
+header {
+  position:sticky;
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+main {
+  position:relative;
+  top:0px;
+  display:flex;
+}
+
+hr {
+  border-color:#222222;
+}
+
+#left {
+  width:60px;
+}
+
+#content {
+  max-width:900px;
+  min-width:600px;
+  border:2px solid #404040;
+  border-radius:10px;
+  padding: 0px 20px;
+  background-color:#444444;
+}
+
+#right {
+  width:400px;
+}
+
+footer {
+   position:relative;
+}
+
+.article-title {
+  margin-bottom:0px;
+}
+
+.article-header {
+  font-size:13px;
+  display:flex;
+  justify-content:space-between;
+  color:#999999;
+}
+
+.article-body {
+  margin-top:30px;
+}
+
+h2 {
+  font-size:20px;
+  text-decoration:underline;
+}
+
     </style>
   </head>
   <body>
-     {{ template "Content" . }}
+    <header>
+      <a href="{{.Home.Link}}">{{.Home.Name}}</a>
+      <hr>
+    </header>
+    <main>
+      <section id="left"></section>
+      <section id="content">
+       {{ template "Content" . }}
+      </section>
+      <section id="right">
+      </section>
+    </main>
+    <footer><hr> &copy; secondarykey</footer>
   </body>
 </html>
