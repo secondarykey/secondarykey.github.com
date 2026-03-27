@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ .Home.Name }}</title>
     <meta name="description" content="{{.Home.Detail}}">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
     <style>
     
 body {
@@ -88,10 +92,6 @@ hr {
 #content {
   max-width:900px;
   min-width:600px;
-  border:2px solid #404040;
-  border-radius:10px;
-  padding: 0px 20px;
-  background-color:#444444;
 }
 
 #right {
@@ -117,6 +117,49 @@ footer {
   margin-top:30px;
 }
 
+article.body{
+  border:2px solid #404040;
+  border-radius:10px;
+  padding: 0px 20px;
+  background-color:#444444;
+}
+
+article.card{
+  border:2px solid #404040;
+  border-radius:5px;
+  padding: 0px 20px;
+  background-color:#444444;
+  display:flex;
+  margin:0px;
+  padding:0px;
+}
+
+article.card > img {
+  width:240px;
+  height:auto;
+}
+
+article.card > span {
+   padding-left: 10px;
+}
+
+article.card > span > p.date{
+  font-size:10px;
+  color: #cccccc;
+  margin:5px 2px;
+}
+
+article.card > span > p.title {
+  font-size:20px;
+  margin:5px 0px;
+}
+
+article.card > span > p.body {
+  font-size:14px;
+  margin:5px 0px;
+  white-space:pre-wrap;
+}
+
 h2 {
   font-size:20px;
   text-decoration:underline;
@@ -138,5 +181,10 @@ h2 {
       </section>
     </main>
     <footer><hr> &copy; secondarykey</footer>
+
+<script>
+hljs.highlightAll();
+</script>
+
   </body>
 </html>
