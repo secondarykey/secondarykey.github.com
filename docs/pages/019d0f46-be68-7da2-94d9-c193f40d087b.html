@@ -88,10 +88,6 @@ hr {
 #content {
   max-width:900px;
   min-width:600px;
-  border:2px solid #404040;
-  border-radius:10px;
-  padding: 0px 20px;
-  background-color:#444444;
 }
 
 #right {
@@ -117,6 +113,49 @@ footer {
   margin-top:30px;
 }
 
+article.body{
+  border:2px solid #404040;
+  border-radius:10px;
+  padding: 0px 20px;
+  background-color:#444444;
+}
+
+article.card{
+  border:2px solid #404040;
+  border-radius:5px;
+  padding: 0px 20px;
+  background-color:#444444;
+  display:flex;
+  margin:0px;
+  padding:0px;
+}
+
+article.card > img {
+  width:240px;
+  height:auto;
+}
+
+article.card > span {
+   padding-left: 10px;
+}
+
+article.card > span > p.date{
+  font-size:10px;
+  color: #cccccc;
+  margin:5px 2px;
+}
+
+article.card > span > p.title {
+  font-size:20px;
+  margin:5px 0px;
+}
+
+article.card > span > p.body {
+  font-size:14px;
+  margin:5px 0px;
+  white-space:pre-wrap;
+}
+
 h2 {
   font-size:20px;
   text-decoration:underline;
@@ -132,7 +171,7 @@ h2 {
     <main>
       <section id="left"></section>
       <section id="content">
-       <article>
+       <article class="body">
 <h1 class="article-title">
   <a href="../pages/019d0f46-be68-7da2-94d9-c193f40d087b.html">ことのはじまり</a>
 </h1>
@@ -146,10 +185,7 @@ h2 {
 <p>そういえばそういうの書く個人ブログないなぁ</p>
 </blockquote>
 <p>それがなぜ今に至ったかを書いていきたい。</p>
-<blockquote>
-<p>まぁGitHubに適当に書くか</p>
-</blockquote>
-<p>位から始まったんだけど、書こうと思うと案外書きづらい。
+<p>GitHubに残すか。位から始まったんだけど、書こうと思うと案外書きづらい。
 ちょうどその頃マークダウンの簡易エディタが欲しくてそれを作ってやろうという簡単な気持ちから始まった。</p>
 <h2>膨らむエディタ</h2>
 <p>本当に簡単なマークダウンエディタを作る予定だった。</p>
@@ -168,17 +204,17 @@ h2 {
 <p>そんなの想定して無かったので設計変更が必要になってくる。
 ツリー構造にするならドラッグしたいよなぁとか細かいことができればいいなぁとか画像を挿入してーとか、当初の目標である簡易CMSとしての機能が加わりどんどん肥大化していって頭が痛くなってきた。</p>
 <h2>ライバルの進化と衰退</h2>
-<p>VSCode で同じようなことはできるんだけど、まぁライバル視してあまりライバル視してなかった。単純にメモを書いておくには大きすぎるかな？って印象だったからだ。</p>
+<p>VSCode で同じようなことはできるんだけど、まぁあまりライバル視してなかった。VSCode立ち上げてメモを取るか？って印象だったからだ。</p>
 <p>しかしちょうどその頃、Microsoftの肝いりで”メモ帳”が進化を始める。
 タブで開けるようになり、端末が再起動してもメモ自体は残っている。</p>
-<p>ようは一番やりたかった保存せずに文章は残っているという一番の特徴が被ってしまった。</p>
-<p>自分の気持ちも少し萎えたのとデータ自体の保存は完了していたので別にいいやって感じになって自分用のツールとして使っていた。</p>
+<p>ようは一番やりたかった保存せずに文章は残っているという一番の特徴が被ってしまった。本当に欲しかったのはタブ化だったのかもしれない。</p>
 <p>そして、再燃するきっかけになったのはメモ帳の無駄な進化。マークダウンへの対応である。</p>
 <p>それをみた瞬間</p>
 <blockquote>
 <p>メモ帳は終わった</p>
 </blockquote>
-<p>と感じた。はじまっていたのかは不明だけど、少し開発意欲が湧いてくる。</p>
+<p>と感じた。はじまっていたのかは不明だけど。
+ただテキストをいじっているのに、データがどうなっているのかさえわからない。</p>
 <h2>AIの進化</h2>
 <p>恐らく全くバージョンアップをしなくなって１年は経過した頃。
 AIが進化し、コードを書いてくれるようになっていた。自分も使うようになっていった。</p>
@@ -198,9 +234,21 @@ AIが進化し、コードを書いてくれるようになっていた。自分
 面白いことに簡易的なGitクライアントみたいな機能がちょこちょこある。</p>
 <img src="../assets/clipboard-1774141457869.png">
 
+<p>ちなみにこの機能のベースは自分で実装していた部分。
+エディタなのに何やってんだろ？みたい考えてたのを覚えている。</p>
+<pre><code>    if err := log.Init(); err != nil {
+        slog.Warn(&quot;ログファイルの初期化に失敗: &quot; + err.Error())
+    }
+    defer log.Close()
+</code></pre>
+<p>もちろんだけどコードも書ける。
+スタイルはテンプレートで当てるだけなので、コードハイライトを入れればいい。</p>
+<p>それこそAIと連動してメモを編集っていう機能も考えたけど、なんかメンドくさいので止めました。
+マークダウンは普通にファイルとして見れるので、AIにお願いすればいいだけ。</p>
 <p>まだ色々な機能を追加していくとは思うが、まぁ一旦はそれなりのエディタになった。何より編集自体は外部エディタを起動して編集もできるのでVimも使おうと思えば使える。</p>
-<p>Wikiなどで使い方が出来上がったら何か宣伝もするかもだけど、まぁ基本的には自分の便利なメモ帳である。</p>
-
+<p>エディタ上で画面貼り付けできるのが、メモ的にはやっぱ優秀かな。
+Wikiなどで使い方が出来上がったら何か宣伝もするかもだけど、まぁ基本的には自分の便利なメモ帳である。</p>
+<img src="assets/error">
 </p>
 </article>
 
