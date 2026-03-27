@@ -1,6 +1,15 @@
-<p>Simple Index</p>
-<ul>
-{{ range latestNotes 4 }}
-  <li><a href="{{.Link}}">{{ .Name }}</a></li>
+{{ range childrenNotes 4 "019d0f4d-2602-7c06-a146-ec8afe3c6fae"}}
+
+  <a href="{{.Link}}">  </a>
+
+<article class="card">
+
+    <img src="{{ .Image }}">
+    <span>
+        <p class="date">{{ formatDate .Publish  "2006-01-02 15:04" }}</p>
+        <p class="title">{{ .Name }}</p>
+        <p class="body">{{.Detail}}</p>
+   </span>
+</article>
+
 {{ end }}
-</ul>

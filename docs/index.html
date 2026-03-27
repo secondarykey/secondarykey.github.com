@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ブログ</title>
+    <title>A home-cooked move</title>
     <meta name="description" content="secondarykey の開発日誌です。">
     <style>
+    
 body {
    color:white; 
    background-color:#333333;
@@ -25,6 +26,35 @@ a {
    color:gray;
 }
 
+blockquote {
+  position: relative;
+  background-color:#555555;
+  margin:20px;
+  padding:5px;
+  padding-left:30px;
+  border-radius:10px;
+}
+
+blockquote::before {
+  content: "“";
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  font-size: 3em;
+  line-height: 1;
+  color: #999;
+}
+
+blockquote::after {
+  content: "”";
+  font-size: 3em;
+  line-height: 0;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: #999;
+}
+
 div.binderSVG svg {
   background-color:#333333;
 }
@@ -35,21 +65,134 @@ div.binderSVG {
   padding:5px;
 }
 
+header {
+  position:sticky;
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+main {
+  position:relative;
+  top:0px;
+  display:flex;
+}
+
+hr {
+  border-color:#222222;
+}
+
+#left {
+  width:60px;
+}
+
+#content {
+  max-width:900px;
+  min-width:600px;
+}
+
+#right {
+  width:400px;
+}
+
+footer {
+   position:relative;
+}
+
+.article-title {
+  margin-bottom:0px;
+}
+
+.article-header {
+  font-size:13px;
+  display:flex;
+  justify-content:space-between;
+  color:#999999;
+}
+
+.article-body {
+  margin-top:30px;
+}
+
+article.body{
+  border:2px solid #404040;
+  border-radius:10px;
+  padding: 0px 20px;
+  background-color:#444444;
+}
+
+article.card{
+  border:2px solid #404040;
+  border-radius:5px;
+  padding: 0px 20px;
+  background-color:#444444;
+  display:flex;
+  margin:0px;
+  padding:0px;
+}
+
+article.card > img {
+  width:240px;
+  height:auto;
+}
+
+article.card > span {
+   padding-left: 10px;
+}
+
+article.card > span > p.date{
+  font-size:10px;
+  color: #cccccc;
+  margin:5px 2px;
+}
+
+article.card > span > p.title {
+  font-size:20px;
+  margin:5px 0px;
+}
+
+article.card > span > p.body {
+  font-size:14px;
+  margin:5px 0px;
+  white-space:pre-wrap;
+}
+
+h2 {
+  font-size:20px;
+  text-decoration:underline;
+}
+
     </style>
   </head>
   <body>
-     <p>Simple Index</p>
-<ul>
+    <header>
+      <a href="./">A home-cooked move</a>
+      <hr>
+    </header>
+    <main>
+      <section id="left"></section>
+      <section id="content">
+       
 
-  <li><a href="pages/019d0f4d-2602-7c06-a146-ec8afe3c6fae.html">公開位置</a></li>
+  <a href="./pages/019d0f46-be68-7da2-94d9-c193f40d087b.html">  </a>
 
-  <li><a href="pages/019d0f4c-7959-7e80-a80f-4332f022cda6.html">小ネタ</a></li>
+<article class="card">
 
-  <li><a href="index.html">トップページ</a></li>
+    <img src="./images/meta/019d0f46-be68-7da2-94d9-c193f40d087b">
+    <span>
+        <p class="date">2026-03-22 06:22</p>
+        <p class="title">ことのはじまり</p>
+        <p class="body">個人ブログを作ろうとは思っていたんですけど、
+かなり長い道のりでした。
+何故長かったか？経緯を説明しておきます。</p>
+   </span>
+</article>
 
-  <li><a href="pages/019d0f46-be68-7da2-94d9-c193f40d087b.html">ことのはじまり</a></li>
 
-</ul>
 
+      </section>
+      <section id="right">
+      </section>
+    </main>
+    <footer><hr> &copy; secondarykey</footer>
   </body>
 </html>

@@ -3,9 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ブログ</title>
+    <title>A home-cooked move</title>
     <meta name="description" content="secondarykey の開発日誌です。">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
     <style>
+    
 body {
    color:white; 
    background-color:#333333;
@@ -25,6 +30,35 @@ a {
    color:gray;
 }
 
+blockquote {
+  position: relative;
+  background-color:#555555;
+  margin:20px;
+  padding:5px;
+  padding-left:30px;
+  border-radius:10px;
+}
+
+blockquote::before {
+  content: "“";
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  font-size: 3em;
+  line-height: 1;
+  color: #999;
+}
+
+blockquote::after {
+  content: "”";
+  font-size: 3em;
+  line-height: 0;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: #999;
+}
+
 div.binderSVG svg {
   background-color:#333333;
 }
@@ -35,12 +69,122 @@ div.binderSVG {
   padding:5px;
 }
 
+header {
+  position:sticky;
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+main {
+  position:relative;
+  top:0px;
+  display:flex;
+}
+
+hr {
+  border-color:#222222;
+}
+
+#left {
+  width:60px;
+}
+
+#content {
+  max-width:900px;
+  min-width:600px;
+}
+
+#right {
+  width:400px;
+}
+
+footer {
+   position:relative;
+}
+
+.article-title {
+  margin-bottom:0px;
+}
+
+.article-header {
+  font-size:13px;
+  display:flex;
+  justify-content:space-between;
+  color:#999999;
+}
+
+.article-body {
+  margin-top:30px;
+}
+
+article.body{
+  border:2px solid #404040;
+  border-radius:10px;
+  padding: 0px 20px;
+  background-color:#444444;
+}
+
+article.card{
+  border:2px solid #404040;
+  border-radius:5px;
+  padding: 0px 20px;
+  background-color:#444444;
+  display:flex;
+  margin:0px;
+  padding:0px;
+}
+
+article.card > img {
+  width:240px;
+  height:auto;
+}
+
+article.card > span {
+   padding-left: 10px;
+}
+
+article.card > span > p.date{
+  font-size:10px;
+  color: #cccccc;
+  margin:5px 2px;
+}
+
+article.card > span > p.title {
+  font-size:20px;
+  margin:5px 0px;
+}
+
+article.card > span > p.body {
+  font-size:14px;
+  margin:5px 0px;
+  white-space:pre-wrap;
+}
+
+h2 {
+  font-size:20px;
+  text-decoration:underline;
+}
+
     </style>
   </head>
   <body>
-     <h1>小ネタ</h1>
-<p>ここには小ネタを書いていき、</p>
+    <header>
+      <a href="../">A home-cooked move</a>
+      <hr>
+    </header>
+    <main>
+      <section id="left"></section>
+      <section id="content">
+       ここは作業場です
+      </section>
+      <section id="right">
+      </section>
+    </main>
+    <footer><hr> &copy; secondarykey</footer>
 
+<script>
+hljs.highlightAll();
+</script>
 
   </body>
 </html>
